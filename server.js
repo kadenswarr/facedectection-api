@@ -31,6 +31,12 @@ app.put('/image', (req, res) => { image.handleImage(req, res, knex)});
 app.post('/imageurl', (req, res) => { image.handleApiCall(req, res)});
 
 
-app.listen(2445, ()=>{
-  console.log('app is running on 2445')
-})
+// app.listen(2445, ()=>{
+//   console.log('app is running on 2445')
+// })
+
+let port = process.env.PORT;
+if(port == null || port == "") {
+  port = 8000;
+}
+app.listen(process.env.PORT);
