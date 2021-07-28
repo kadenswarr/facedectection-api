@@ -22,6 +22,7 @@ app.use(express.json());
 app.use(cors());
 
 app.get('/', (req, res) =>{
+  res.json("Hey");
 })
 
 app.post("/signin", (req, res) => { signin.handleSignin(req, res, knex, bcrypt)})
@@ -39,4 +40,6 @@ let port = process.env.PORT;
 if(port == null || port == "") {
   port = 8000;
 }
-app.listen(process.env.PORT);
+app.listen(port, () => {
+  console.log('app is running on', port);
+});
