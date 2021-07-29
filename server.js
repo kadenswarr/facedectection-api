@@ -19,9 +19,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.get('/', (req, res) =>{
-  res.json("Hey");
-})
+app.get('/', (req, res) =>{})
 
 app.post("/signin", (req, res) => { signin.handleSignin(req, res, knex, bcrypt)})
 app.post('/register', (req, res) => { register.handleRegister(req, res, knex, bcrypt) });
