@@ -8,6 +8,7 @@ const knex = require('knex')({
     ssl: {
       rejectUnauthorized: false
     }
+  }
 })
 
 const register =  require('./controllers/register');
